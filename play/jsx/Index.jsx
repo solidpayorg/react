@@ -1,70 +1,81 @@
-
-
-function Body(props) {
+function Body (props) {
   return (
-  <div>
-
-    <h1 id="welcome" className="title">
-      Play apps!
-    </h1>
-
-
-  </div>
-);
+    <div>
+      <h1 id='welcome' className='title'>
+        Play apps!
+      </h1>
+    </div>
+  )
 }
 
 function Li (props) {
-return <li><a href={props.href}>{props.text}</a></li>
+  return (
+    <div className='box'>
+      <a href={props.href}>{props.text}</a>
+    </div>
+  )
 }
 
+function App () {
+  let apps = [
+    { uri: 'bookmark.html', title: 'Bookmarks' },
+    { uri: 'brain.html', title: 'Brain Wallet' },
+    { uri: 'friends.html', title: 'Friends in RDF' },
+    { uri: 'solid.html', title: 'Solid App' },
+    { uri: 'rdflib.html', title: 'Test RDFLib' },
+    { uri: 'tipjar.html', title: 'Tipjars' },
+    { uri: 'localStorage.html', title: 'Local Storage' },
+    { uri: 'bookmarklet.html', title: 'Bookmarklets' },
+    { uri: 'solid-auth-client.html', title: 'Solid Auth Client' },
+    { uri: 'wallet.html', title: 'Wallet' },
+    { uri: 'credit.html', title: 'Credit' },
+    { uri: 'outstated.html', title: 'Outstated Counter' },
+    { uri: 'counter.html', title: 'Counter App' },
+    { uri: 'seed.html', title: 'Seed App' },
+    { uri: 'inbox.html', title: 'Inbox App' },
+    { uri: 'patch.html', title: 'Patch App' },
+    { uri: 'touch.html', title: 'Touch App' },
+    { uri: 'put.html', title: 'Put App' },
+    { uri: 'person.html', title: 'Profile App' },
+    { uri: 'container.html', title: 'Container App' },
+    { uri: 'timeline.html', title: 'Timeline App' },
+    { uri: 'webtorrent.html', title: 'Webtorrent App' },
+    { uri: 'dashboard.html', title: 'Dashboard App' },
+    { uri: 'points.html', title: 'Points App' },
+    {
+      uri:
+        'mind.html?data=%7B%22nodeData%22%3A%7B%22id%22%3A%22root%22%2C%22topic%22%3A%22Lightning%20games%22%2C%22root%22%3Atrue%2C%22children%22%3A%5B%7B%22topic%22%3A%22released%22%2C%22id%22%3A%22c63b8604ff228829%22%2C%22selected%22%3Atrue%2C%22new%22%3Atrue%2C%22children%22%3A%5B%7B%22topic%22%3A%22donner%20dungeon%22%2C%22id%22%3A%22c63b847b05a5686b%22%2C%22selected%22%3Atrue%2C%22new%22%3Atrue%7D%2C%7B%22topic%22%3A%22poker%22%2C%22id%22%3A%22c63b840e2e19d384%22%2C%22selected%22%3Atrue%2C%22new%22%3Atrue%7D%2C%7B%22topic%22%3A%22agar%22%2C%22id%22%3A%22c631c9cb1d7ff3cf%22%2C%22selected%22%3Atrue%2C%22new%22%3Atrue%2C%22style%22%3A%7B%22color%22%3A%22%23c0392c%22%7D%7D%5D%7D%2C%7B%22topic%22%3A%22coming%20soon%22%2C%22id%22%3A%22c63b869ec834af65%22%2C%22selected%22%3Atrue%2C%22new%22%3Atrue%2C%22children%22%3A%5B%7B%22topic%22%3A%22Infinite%20Fleet%22%2C%22id%22%3A%22c63b898f4420b806%22%2C%22selected%22%3Atrue%2C%22new%22%3Atrue%2C%22style%22%3A%7B%22fontSize%22%3A%2232%22%2C%22color%22%3A%22%2327ae61%22%2C%22fontWeight%22%3A%22bold%22%7D%7D%5D%7D%5D%2C%22expanded%22%3Atrue%2C%22style%22%3A%7B%22color%22%3A%22%23f1c40e%22%7D%7D%2C%22linkData%22%3A%7B%7D%7D',
+      title: 'Mind Map App'
+    },
+    { uri: 'groupuris.html', title: 'Group URIs' },
+    { uri: 'conference.html', title: 'Conference Call' },
+    { uri: 'acl.html', title: 'ACL App' },
+    { uri: 'activity.html', title: 'Activity App' }
+  ]
 
-function App() {
-return (
-  <div>
-    <NavbarSolidLogin
-       className="is-link" 
-       title="Play Apps" 
-       sourceCode="https://github.com/play-grounds/react/blob/gh-pages/play/index.html"/>
-    <section className="section">
-      <Body/>
-      <hr/>
-      Play apps is a set of playground apps to test out various functionality.
-      <br/>
-      Click on a link below to try out one of our apps.
-      <hr/>
-    <ul>
-      <Li href="bookmark.html" text="Bookmarks" />
-      <Li href="brain.html" text="Brain Wallet" />
-      <Li href="friends.html" text="Friends in RDF" />
-      <Li href="solid.html" text="Solid App" />
-      <Li href="rdflib.html" text="Test RDFLib" />
-      <Li href="tipjar.html" text="Tipjars" />
-      <Li href="localStorage.html" text="Local Storage" />
-      <Li href="bookmarklet.html" text="Bookmarklets" />
-      <Li href="solid-auth-client.html" text="Solid Auth Client" />
-      <Li href="wallet.html" text="Wallet" />
-      <Li href="credit.html" text="Credit" />
-      <Li href="outstated.html" text="Outstated Counter" />
-      <Li href="counter.html" text="Counter App" />
-      <Li href="seed.html" text="Seed App" />
-      <Li href="inbox.html" text="Inbox App" />
-      <Li href="patch.html" text="Patch App" />
-      <Li href="put.html" text="Put App" />
-      <Li href="person.html" text="Profile App" />
-      <Li href="container.html" text="Container App" />
-      <Li href="timeline.html" text="Timeline App" />
-      <Li href="dashboard.html" text="Dashboard App" />
-      <Li href="acl.html" text="ACL App" />
-    </ul>
-    <hr/>
-    </section>
+  var appList = apps.map(app => {
+    return <Li href={app.uri} text={app.title} />
+  })
 
-  </div>
-);
+  return (
+    <div>
+      <NavbarSolidLogin
+        className='is-link'
+        title='Play Apps'
+        sourceCode='https://github.com/play-grounds/react/blob/gh-pages/play/index.html'
+      />
+      <section className='section'>
+        <Body />
+        <hr />
+        Play apps is a set of playground apps to test out various functionality.
+        <br />
+        Click on a link below to try out one of our apps.
+        <hr />
+        {appList}
+        <hr />
+      </section>
+    </div>
+  )
 }
 
-ReactDOM.render(
-<App />,
-document.getElementById('root')
-);
-
+ReactDOM.render(<App />, document.getElementById('root'))
